@@ -4,7 +4,7 @@ pageEncoding="ISO-8859-1"%>
 <html>
 <body>
 <%
-String site = "Welcome! Thank you for logging in";
+String site = "Welcome! Thank you for logging bfbdsjkdajhs in";
 out.print(site);
 %>
 

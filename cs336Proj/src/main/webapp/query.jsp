@@ -10,6 +10,7 @@
 <title>Welcome</title>
 </head>
 <body>
+
 	<%
 			//Get the database connection
 			ApplicationDB db = new ApplicationDB();	
@@ -29,20 +30,47 @@
 			
 			//Run the query against the database.
 			ResultSet result = ps.executeQuery();%>
-			<%if(result.next()){
-				String site = "Welcome! Thank you for logging in";
+			<%if(result.next() || (Username == null && Password == null)){
+				String site = "Welcome "+request.getSession().getAttribute("customer")+"! Thank you for logging in";
 				out.print(site);%>
-				<input type="submit" onclick="location.href='HelloWorld.jsp'" value="Log-out" >
+				<input type="submit" onclick="location.href='Logout.jsp'" value="Logout" >
+				<h3>Click for Buy</h3>
+				<input type="submit" onclick="location.href='queryBuy.jsp'" value="Buy" >
+				<h3>Click for Sell</h3>
+				<input type="submit" onclick="location.href='Sell.jsp'" value="Sell" >
+				<h3>Click to view Auctions</h3>
+				<input type="submit" onclick="location.href='viewAuctionsUser.jsp'" value="Auctions" >
+				<h3>Click to Search Inventory</h3>
+				<input type="submit" onclick="location.href='searchBar.jsp'" value="Search" >
+				<h3>Enter any feedback you have! Our customer representative will happily help!</h3>
+				<form action="FeedbackConfirmation.jsp">
+  				<p><label for="feedback">Enter Feedback:</label></p>
+  				<textarea id="feedback" name="feedback" rows="4" cols="50">Please let us know how we are doing here.</textarea>
+  				<br>
+  				<input type="submit" value="Submit">
+				</form>
+				<form method="post" action="viewAuctionsUser_Middle.jsp">
+				<table>
+				<tr>    
+				<td></td><td><input type="hidden" value=<%=Username%> name="user"></td>
+				</tr>
+
+				</table>
+				</form>
 						
 		<%	}
 			else{
 				String site = "Incorrect Username or Password. Please try again";
 				out.print(site);
 			}
+			
+			
 	
 
 	%>
+
 	
 
 </body>
+
 </html>

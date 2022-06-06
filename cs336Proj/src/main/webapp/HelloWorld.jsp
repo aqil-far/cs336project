@@ -25,9 +25,33 @@
 		<br>
 	
 	<h4>Login</h4>
-	
+	<h3> Customer Log-in</h3>
 	<br>
-		<form method="post" action="query.jsp">
+		<form method="post" action="CustomerSession.jsp">
+		<table>
+		<tr>    
+		<td>Username</td><td><input type="text" name="username"></td>
+		</tr>
+		<tr>
+		<td>Password</td><td><input type="text" name="password"></td>
+		</tr>
+
+		</table>
+		
+
+			<br>
+		
+		<input type="submit" value="Login" >
+		
+		<br>
+	
+
+	<br>
+</form>
+
+	<h3> Admin Log-in</h3>
+	<br>
+		<form method="post" action="queryAdmin.jsp">
 		<table>
 		<tr>    
 		<td>Username</td><td><input type="text" name="username"></td>
@@ -41,8 +65,52 @@
 		
 			<br>
 
+
 		
-		<input type="submit" value="Next" >
+		<input type="submit"  value="Login" >
+		
+		<br>
+	
+
+	<br>
+</form>
+
+	<h3> Customer Rep Log-in</h3>
+	<br>
+		<form method="post" action="queryCusRep.jsp">
+		<table>
+		<tr>    
+		<td>Username</td><td><input type="text" name="username"></td>
+		</tr>
+		<tr>
+		<td>Password</td><td><input type="text" name="password"></td>
+		</tr>
+
+		</table>
+		
+
+			<br>
+
+		
+		<input type="submit" value="Login" >
+		
+		<br>
+	
+
+	<br>
+</form>
+</form>
+
+	<h3> Register</h3>
+	<br>
+		<form method="post" action="Register.jsp">
+		
+		
+
+			<br>
+
+		
+		<input type="submit" onclick="location.href='Register.jsp'" value="Register" >
 		
 		<br>
 	
